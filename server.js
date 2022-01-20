@@ -15,8 +15,7 @@ args['port']
 
 // Define allowed argument name 'port'.
 
-//const port = process.env.PORT || 3000
-const port = args.PORT || 3000
+const port = process.env.PORT || 3000
 
 // Define a const `port` using the argument from the command line. 
 // Make this const default to port 3000 if there is no argument given for `--port`.
@@ -50,7 +49,7 @@ fs.readFile('./www/index.html', 'utf8', (err, data) => {
 const server = http.createServer((req, res) => {
     res.statusCode = 200
     res.setHeader('text/html')
-    res.end('<td></td><td>Z</td>')
+    res.end(data)
 })
 
 
@@ -59,7 +58,7 @@ const server = http.createServer((req, res) => {
 // Put the exact message `Server listening on port ${port}` on the console log. 
 
 server.listen(port, () => {
-    console.log('Server running at port ${port}')
+    console.log("Server running at port %d", port)
 })
 
 
