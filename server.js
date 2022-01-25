@@ -15,7 +15,7 @@ args['port']
 
 // Define allowed argument name 'port'.
 
-const port = process.env.PORT || 3000
+const port = args.port || process.env.PORT || 3000
 
 // Define a const `port` using the argument from the command line. 
 // Make this const default to port 3000 if there is no argument given for `--port`.
@@ -28,9 +28,10 @@ fs.readFile('./www/index.html', 'utf8', (err, data) => {
     if(err) {
         console.error(err)
         return
+        process.exit(1)
     }
-    console.log(data)
-})
+    //console.log(data)
+
 
 // If there is an error, put it on the console error, return, and exit with error code 1. 
 // Do not be nice about exiting.
@@ -60,6 +61,6 @@ const server = http.createServer((req, res) => {
 server.listen(port, () => {
     console.log(`Server running at port ${port}`)
 })
-
+})
 
 // That's it! You're all done!
