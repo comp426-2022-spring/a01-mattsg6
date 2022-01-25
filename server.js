@@ -58,7 +58,7 @@ const server = http.createServer((req, res) => {
 // Put the exact message `Server listening on port ${port}` on the console log. 
 
 server.listen(port, () => {
-    console.log("Server running at port %d", port)
+    console.log(`Server running at port ${port}`)
 })
 
 
