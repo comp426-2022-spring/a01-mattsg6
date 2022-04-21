@@ -64,12 +64,3 @@ server.listen(port, () => {
 })
 
 // That's it! You're all done!
-// hello world
-// my name is matthew
-// how are you?
-// to be or not to be that is the question
-// what you doing
-// where you at
-// you got plans
-// don't say that
-// shut your trap
